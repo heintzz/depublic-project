@@ -1,7 +1,7 @@
 import App from "../App.tsx";
 import { redirect, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
-import { Signup } from "../pages/Signup";
-import { Login } from "../pages/Login";
+import { SignupPage } from "../pages/Signup";
+import { LoginPage } from "../pages/Login";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,7 +19,7 @@ const router = createBrowserRouter(
       />
       <Route
         path="/signup"
-        element={<Signup />}
+        element={<SignupPage />}
         loader={() => {
           const user = localStorage.getItem("user");
           if (user) {
@@ -30,7 +30,7 @@ const router = createBrowserRouter(
       />
       <Route
         path="/login"
-        element={<Login />}
+        element={<LoginPage />}
         loader={() => {
           const user = localStorage.getItem("user");
           if (user) {
