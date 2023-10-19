@@ -45,7 +45,7 @@ export const Signup = () => {
 
   return (
     <div className="bg-[#EEEEEE] h-[100dvh] grid place-content-center">
-      <div className="bg-white min-w-[425px] h-screen relative">
+      <div className="bg-white w-[100%] max-w-[425px] h-screen relative">
         {loading && (
           <div className="absolute top-0 bottom-0 z-20 backdrop-blur w-full grid place-items-center">
             <div className="w-[90%] px-5 pb-5 rounded-2xl bg-white min-h-[200px] max-w-[800px] mb-60 drop-shadow-lg flex flex-col items-center justify-center">

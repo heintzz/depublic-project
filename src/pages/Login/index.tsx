@@ -34,8 +34,8 @@ export const Login = () => {
   };
 
   return (
-    <div className="bg-[#EEEEEE] h-[100dvh] grid place-content-center">
-      <div className="bg-white min-w-[425px] h-screen">
+    <div className="bg-[#EEEEEE] h-[100dvh] grid sm:place-content-center">
+      <div className="bg-white w-full max-w-[425px] sm:w-[425px] h-screen">
         <div className="w-full bg-[#FEF6E5] px-7 py-5 font-bold relative z-10 drop-shadow-[0px_3px_0px_rgba(0,0,0,0.4)]">
           Sign In
         </div>
