@@ -1,43 +1,23 @@
-import App from "../App.tsx";
-import { redirect, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import { SignupPage } from "../pages/Signup";
 import { LoginPage } from "../pages/Login";
+import HomePage from "../pages/Home/index.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route
-        path="/"
-        element={<App />}
-        loader={() => {
-          const user = localStorage.getItem("user");
-          if (!user) {
-            return redirect("/login");
-          }
-          return null;
-        }}
-      />
-      <Route
-        path="/signup"
-        element={<SignupPage />}
-        loader={() => {
-          const user = localStorage.getItem("user");
-          if (user) {
-            return redirect("/");
-          }
-          return null;
-        }}
-      />
+      <Route path="/" element={<HomePage />} />
+      <Route path="/signup" element={<SignupPage />} />
       <Route
         path="/login"
         element={<LoginPage />}
-        loader={() => {
-          const user = localStorage.getItem("user");
-          if (user) {
-            return redirect("/");
-          }
-          return null;
-        }}
+        // loader={() => {
+        //   const user = localStorage.getItem("user");
+        //   if (user) {
+        //     return redirect("/");
+        //   }
+        //   return null;
+        // }}
       />
     </Route>
   )
