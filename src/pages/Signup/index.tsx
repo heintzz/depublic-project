@@ -8,8 +8,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import TwoBubbleOrnament from "../../assets/ornaments/two-bubble.svg";
 import { Link, useNavigate } from "react-router-dom";
 
-const inputStyle =
-  "w-full p-4 focus:outline-none border-b-[1px] border-b-gray-400 bg-transparent";
+const inputStyle = "w-full p-4 focus:outline-none border-b-[1px] border-b-gray-400 bg-transparent";
 
 const defaultSignupForm = {
   username: "",
@@ -46,7 +45,7 @@ export const Signup = () => {
 
   return (
     <div className="bg-[#EEEEEE] h-[100dvh] grid place-content-center">
-      <div className="bg-white w-full max-w-[1080px] h-screen">
+      <div className="bg-white w-screen max-w-[1080px] h-screen">
         {loading && (
           <div className="absolute top-0 bottom-0 z-20 backdrop-blur w-full grid place-items-center">
             <div className="w-[90%] px-5 pb-5 rounded-2xl bg-white min-h-[200px] max-w-[800px] mb-60 drop-shadow-lg flex flex-col items-center justify-center">
@@ -61,9 +60,7 @@ export const Signup = () => {
             </div>
           </div>
         )}
-        <div className="w-full bg-[#FEF6E5] px-7 py-5 font-bold relative z-10 drop-shadow-[0px_3px_0px_rgba(0,0,0,0.4)]">
-          Sign Up
-        </div>
+        <div className="w-full bg-[#FEF6E5] px-7 py-5 font-bold relative z-10">Sign Up</div>
         <div className="px-7 pt-12 relative">
           <img
             src={TwoBubbleOrnament}
@@ -71,10 +68,7 @@ export const Signup = () => {
             className="absolute -top-3 right-0 w-24 z-0"
           />
           <p className="font-semibold">Register for the better experience</p>
-          <form
-            onSubmit={handleFormSubmit}
-            className="flex flex-col gap-y-4 my-5 last:gap-y-0"
-          >
+          <form onSubmit={handleFormSubmit} className="flex flex-col gap-y-4 my-5 last:gap-y-0">
             <input
               name="username"
               type="text"
