@@ -71,6 +71,9 @@ export default function HomeCarousel() {
             slidesPerView: 4,
           },
         }}
+        onInit={(swiper) => {
+          swiper.allowSlidePrev = false;
+        }}
         onSlideChange={(swiper) => {
           swiper.allowSlidePrev = swiper.activeIndex !== 0;
           swiper.allowSlideNext =
