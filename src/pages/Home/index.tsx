@@ -21,7 +21,7 @@ export default function HomePage() {
           <input
             type="text"
             placeholder="Search Activities"
-            className="w-full focus:outline-none border backdrop-blur-xl opacity-50 border-red-50 rounded-xl pl-12 pr-6 py-2 text-sm"
+            className="w-full focus:outline-none border backdrop-blur-xl opacity-50 border-red-50 rounded-xl pl-12 pr-6 py-4 text-sm"
           />
           <div className="absolute left-5 top-[50%] translate-y-[-50%] hover:cursor-pointer">
             <BiSearch size="1.25em" fill="#A6A6A6" />
