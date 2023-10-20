@@ -1,7 +1,7 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
-import { SignupPage } from "../pages/Signup";
-import { LoginPage } from "../pages/Login";
-import HomePage from "../pages/Home/index.tsx";
+import { SignupPage } from "pages/Signup";
+import { LoginPage } from "pages/Login";
+import HomePage from "pages/Home";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

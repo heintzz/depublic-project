@@ -6,10 +6,10 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import "./HomeCarousel.css";
 
-import TicketIcon from "../../assets/images/ticket.png";
-import RegistrationIcon from "../../assets/images/registration.png";
-import BookingIcon from "../../assets/images/booking.png";
-import StoreIcon from "../../assets/images/store.png";
+import TicketIcon from "assets/images/ticket.png";
+import RegistrationIcon from "assets/images/registration.png";
+import BookingIcon from "assets/images/booking.png";
+import StoreIcon from "assets/images/store.png";
 
 interface Menu {
   name: string;

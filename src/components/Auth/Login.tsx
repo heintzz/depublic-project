@@ -1,11 +1,12 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
 
-import TwoBubbleOrnament from "../../assets/ornaments/two-bubble.svg";
+import TwoBubbleOrnament from "assets/ornaments/two-bubble.svg";
 import OAuthButton from "./OAuthButton";
-import ShowHidePassword from "../../components/Auth/ShowHidePassword";
+import ShowHidePassword from "components/Auth/ShowHidePassword";
+import SectionSeparator from "components/SectionSeparator";
+
 import "./Auth.css";
-import SectionSeparator from "../SectionSeparator";
 
 const defaultLoginForm = {
   username: "",

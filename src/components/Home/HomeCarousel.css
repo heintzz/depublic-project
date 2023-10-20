@@ -15,11 +15,11 @@
 }
 
 .swiper-button-next::before {
-  content: url("../../assets/icons/next-arrow.svg");
+  content: url("assets/icons/next-arrow.svg");
   cursor: pointer;
 }
-  
+
 .swiper-button-prev::before {
-  content: url("../../assets/icons/prev-arrow.svg");
+  content: url("assets/icons/prev-arrow.svg");
   cursor: pointer;
 }

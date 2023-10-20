@@ -1,12 +1,12 @@
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "./HighlightCarousel.css";
 
-import Btob from "../../assets/images/btob.png";
-import Maher from "../../assets/images/maher-zain.png";
+import Btob from "assets/images/btob.png";
+import Maher from "assets/images/maher-zain.png";
 
 const highlight = [
   {
@@ -25,17 +25,13 @@ const highlight = [
     name: "Maher Zain",
     image: Maher,
   },
-  {
-    name: "BTOB",
-    image: Btob,
-  },
 ];
 
 export default function HighlightCarousel() {
   return (
     <>
       <Swiper
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         loop={true}
         pagination={{ clickable: true, dynamicMainBullets: 2 }}
         slidesPerView="auto"
@@ -43,7 +39,7 @@ export default function HighlightCarousel() {
         centeredSlides={true}
         spaceBetween={10}
         autoplay={{
-          delay: 1000,
+          delay: 5000,
         }}
       >
         {highlight.map((item, index) => (

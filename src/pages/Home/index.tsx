@@ -1,12 +1,12 @@
 import { BiSearch } from "react-icons/bi";
-import MainLayout from "../../components/MainLayout";
-import NavigateButton from "../../components/NavigateButton";
+import MainLayout from "components/MainLayout";
+import NavigateButton from "components/NavigateButton";
 
-import DepublicBrand from "../../assets/icons/depublic-brand.svg";
-import TwoBubbleOrnament from "../../assets/ornaments/two-bubble.svg";
-import HomeCarousel from "../../components/Home/HomeCarousel";
-import SectionSeparator from "../../components/SectionSeparator";
-import HighlightCarousel from "../../components/Home/HighlightCarousel";
+import DepublicBrand from "assets/icons/depublic-brand.svg";
+import TwoBubbleOrnament from "assets/ornaments/two-bubble.svg";
+import HomeCarousel from "components/Home/HomeCarousel";
+import SectionSeparator from "components/SectionSeparator";
+import HighlightCarousel from "components/Home/HighlightCarousel";
 
 export default function HomePage() {
   return (
@@ -17,11 +17,11 @@ export default function HomePage() {
           alt="bubble ornament"
           className="absolute -top-10 -right-10 w-60"
         />
-        <div className="relative">
+        <div className="relative backdrop-blur-xl border-gray-300 border rounded-xl">
           <input
             type="text"
             placeholder="Search Activities"
-            className="w-full focus:outline-none border backdrop-blur-xl opacity-50 border-red-50 rounded-xl pl-12 pr-6 py-4 text-sm"
+            className="w-full focus:outline-none placeholder:text-gray-700 opacity-50 border border-red-50 pl-12 rounded-xl  pr-6 py-4 text-sm"
           />
           <div className="absolute left-5 top-[50%] translate-y-[-50%] hover:cursor-pointer">
             <BiSearch size="1.25em" fill="#A6A6A6" />

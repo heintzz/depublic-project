@@ -2,11 +2,12 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { Link, useNavigate } from "react-router-dom";
 
-import TwoBubbleOrnament from "../../assets/ornaments/two-bubble.svg";
+import TwoBubbleOrnament from "assets/ornaments/two-bubble.svg";
+import ShowHidePassword from "components/Auth/ShowHidePassword";
+import SectionSeparator from "components/SectionSeparator";
 import OAuthButton from "./OAuthButton";
-import ShowHidePassword from "../../components/Auth/ShowHidePassword";
+
 import "./Auth.css";
-import SectionSeparator from "../SectionSeparator";
 
 const defaultSignupForm = {
   username: "",

@@ -1,5 +1,5 @@
-import Signup from "../../components/Auth/Signup";
-import MainLayout from "../../components/MainLayout";
+import Signup from "components/Auth/Signup";
+import MainLayout from "components/MainLayout";
 
 export const SignupPage = () => {
   return (
