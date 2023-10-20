@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/scrollbar";
-import "./Navigation.css";
+import "./HomeCarousel.css";
 
 import TicketIcon from "../../assets/images/ticket.png";
 import RegistrationIcon from "../../assets/images/registration.png";
@@ -51,7 +51,7 @@ const menu = [
   },
 ];
 
-export default function Carousel() {
+export default function HomeCarousel() {
   return (
     <>
       <div className="swiper-button-next"></div>
@@ -70,6 +70,11 @@ export default function Carousel() {
           390: {
             slidesPerView: 4,
           },
+        }}
+        onSlideChange={(swiper) => {
+          swiper.allowSlidePrev = swiper.activeIndex !== 0;
+          swiper.allowSlideNext =
+            swiper.activeIndex !== swiper.slides.length - swiper.slidesPerViewDynamic();
         }}
         className="h-full w-full bg-white rounded-2xl shadow-xl"
       >

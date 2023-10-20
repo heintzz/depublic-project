@@ -4,7 +4,9 @@ import NavigateButton from "../../components/NavigateButton";
 
 import DepublicBrand from "../../assets/icons/depublic-brand.svg";
 import TwoBubbleOrnament from "../../assets/ornaments/two-bubble.svg";
-import Carousel from "../../components/Home/Carousel";
+import HomeCarousel from "../../components/Home/HomeCarousel";
+import SectionSeparator from "../../components/SectionSeparator";
+import HighlightCarousel from "../../components/Home/HighlightCarousel";
 
 export default function HomePage() {
   return (
@@ -32,12 +34,12 @@ export default function HomePage() {
           </NavigateButton>
         </div>
         <div className="absolute bottom-0 right-[50%] translate-x-[50%] translate-y-[50%] w-full px-7  h-24">
-          <Carousel />
+          <HomeCarousel />
         </div>
       </div>
-      <div className="h-3 bg-gray-100 mt-20"></div>
-      <div className="px-7 py-9 flex justify-center">
-        <div className="bg-red-200 h-[200px] w-full"></div>
+      <SectionSeparator clsx="mt-20" />
+      <div className="py-9">
+        <HighlightCarousel />
       </div>
       <div className="px-7 last:pl-7 pb-6">
         <div className="flex justify-between items-center">
@@ -48,7 +50,7 @@ export default function HomePage() {
           <div className="w-[180px] h-[150px] bg-red-200 rounded-xl">miaw</div>
         </div>
       </div>
-      <div className="h-3 bg-gray-100"></div>
+      <SectionSeparator />
       <div className="px-7 last:pl-7 py-6">
         <div className="flex justify-between items-center">
           <p className="font-semibold">Upcoming Event</p>
