@@ -1,9 +1,10 @@
-import MainLayout from "../../components/MainLayout";
 import { BiSearch } from "react-icons/bi";
+import MainLayout from "../../components/MainLayout";
 import NavigateButton from "../../components/NavigateButton";
 
-import TwoBubbleOrnament from "../../assets/ornaments/two-bubble.svg";
 import DepublicBrand from "../../assets/icons/depublic-brand.svg";
+import TwoBubbleOrnament from "../../assets/ornaments/two-bubble.svg";
+import Carousel from "../../components/Home/Carousel";
 
 export default function HomePage() {
   return (
@@ -30,25 +31,8 @@ export default function HomePage() {
             Download Aplikasi
           </NavigateButton>
         </div>
-        <div className="absolute bottom-0 right-[50%] translate-x-[50%] translate-y-[50%] w-[90%] rounded-2xl py-4 bg-red-200 h-24">
-          <div className="flex justify-evenly items-end">
-            <div className="grid gap-y-2">
-              <p>gambar</p>
-              <p>ticket</p>
-            </div>
-            <div className="grid gap-y-2">
-              <p>gambar</p>
-              <p>ticket</p>
-            </div>
-            <div className="grid gap-y-2">
-              <p>gambar</p>
-              <p>ticket</p>
-            </div>
-            <div className="grid gap-y-2">
-              <p>gambar</p>
-              <p>ticket</p>
-            </div>
-          </div>
+        <div className="absolute bottom-0 right-[50%] translate-x-[50%] translate-y-[50%] w-full px-7  h-24">
+          <Carousel />
         </div>
       </div>
       <div className="h-3 bg-gray-100 mt-20"></div>
