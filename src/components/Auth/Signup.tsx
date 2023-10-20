@@ -6,6 +6,7 @@ import TwoBubbleOrnament from "../../assets/ornaments/two-bubble.svg";
 import OAuthButton from "./OAuthButton";
 import ShowHidePassword from "../../components/Auth/ShowHidePassword";
 import "./Auth.css";
+import SectionSeparator from "../SectionSeparator";
 
 const defaultSignupForm = {
   username: "",
@@ -107,7 +108,7 @@ export default function Signup() {
           </p>
         </form>
       </div>
-      <div className="h-3 bg-gray-100 mt-6 mb-10"></div>
+      <SectionSeparator clsx="mt-6 mb-10" />
       <div className="flex flex-col items-center">
         <p className="mb-8">atau daftar dengan</p>
         <div className="grid grid-cols-3 gap-x-5">
