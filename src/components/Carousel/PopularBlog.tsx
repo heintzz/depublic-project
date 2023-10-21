@@ -17,8 +17,8 @@ export default function PopularBlog() {
         slidesPerView={1.5}
         spaceBetween={15}
         navigation={{
-          nextEl: ".event.swiper-button-next",
-          prevEl: ".event.swiper-button-prev",
+          nextEl: ".blog.swiper-button-next",
+          prevEl: ".blog.swiper-button-prev",
         }}
         className="p-7"
       >
