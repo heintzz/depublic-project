@@ -66,10 +66,10 @@ export default function HomePage() {
           <p className="font-semibold">Popular Blog</p>
           <p className="text-xs text-gray-400 relative">
             <span>See All</span>
-            <span className="event swiper-button-next rounded-full w-6 aspect-square bg-red-200 grid place-items-center">
+            <span className="blog swiper-button-next rounded-full w-6 aspect-square bg-red-200 grid place-items-center">
               <GrNext />
             </span>
-            <span className="event swiper-button-prev rounded-full w-6 aspect-square bg-red-200 grid place-items-center">
+            <span className="blog swiper-button-prev rounded-full w-6 aspect-square bg-red-200 grid place-items-center">
               <GrPrevious />
             </span>
           </p>
