@@ -1,5 +1,7 @@
 import { FreeMode, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { SlLocationPin } from "react-icons/sl";
+import { GrNext, GrPrevious } from "react-icons/gr";
 import { ISOToDateString } from "utils/helper";
 
 import "swiper/css";
@@ -7,23 +9,41 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "./Carousel.css";
 
-import { SlLocationPin } from "react-icons/sl";
-
 import Maher from "assets/images/maher-zain.png";
 
 export default function UpcomingEvent() {
   return (
-    <>
+    <div className="pb-6">
+      <div className="flex justify-between items-center px-7 ">
+        <p className="font-semibold">Upcoming Event</p>
+        <p className="text-xs text-gray-400 relative">
+          <span>See All</span>
+          <span className="event swiper-button-next shadow-md">
+            <GrNext />
+          </span>
+          <span className="event swiper-button-prev shadow-md">
+            <GrPrevious />
+          </span>
+        </p>
+      </div>
       <Swiper
         modules={[Pagination, Navigation, FreeMode]}
         freeMode={true}
-        slidesPerView={1.25}
-        spaceBetween={10}
+        slidesPerView={1.075}
+        spaceBetween={15}
         navigation={{
           nextEl: ".event.swiper-button-next",
           prevEl: ".event.swiper-button-prev",
         }}
         className="p-7"
+        breakpoints={{
+          "390": {
+            slidesPerView: 1.25,
+          },
+          "450": {
+            slidesPerView: 1.4,
+          },
+        }}
       >
         {[1, 2, 3, 4, 5].map((_, index) => (
           <SwiperSlide key={index}>
@@ -55,6 +75,6 @@ export default function UpcomingEvent() {
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   );
 }

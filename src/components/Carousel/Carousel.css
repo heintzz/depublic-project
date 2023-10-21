@@ -1,3 +1,22 @@
+.swiper-button-prev,
+.swiper-button-next {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.event.swiper-button-next,
+.event.swiper-button-prev,
+.blog.swiper-button-next,
+.blog.swiper-button-prev {
+  width: 24px;
+  height: 24px;
+}
+
 .home.swiper-button-next {
   position: absolute;
   z-index: 20;

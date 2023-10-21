@@ -14,7 +14,10 @@ export default function NavigateButton(props: ButtonProps) {
 
   if (cls === "btn-full")
     return (
-      <Link to={path} className={`px-6 py-2 rounded-xl text-white bg-[${color}] font-semibold`}>
+      <Link
+        to={path}
+        className={`px-7 py-[10px] rounded-xl text-white bg-[${color}] font-semibold`}
+      >
         {children}
       </Link>
     );
@@ -22,7 +25,7 @@ export default function NavigateButton(props: ButtonProps) {
     return (
       <Link
         to={path}
-        className={`px-6 py-2 rounded-xl text-[${color}] bg-white outline-[${color}] font-semibold`}
+        className={`px-7 py-[10px] rounded-xl text-[${color}] bg-white outline-[${color}] font-semibold`}
       >
         {children}
       </Link>

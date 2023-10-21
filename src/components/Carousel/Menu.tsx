@@ -64,14 +64,11 @@ const menu = [
 
 export default function Menu() {
   return (
-    <>
-      <span className="home swiper-button-next rounded-full w-8 aspect-square bg-red-200 grid place-items-center">
+    <div className="absolute z-[2] bottom-0 right-[50%] translate-x-[50%] translate-y-[50%] w-full px-7 h-24">
+      <span className="home swiper-button-next shadow-md">
         <GrNext />
       </span>
-      <span
-        className="home swiper-button-prev rounded-full w-8
-       aspect-square bg-red-200 grid place-items-center"
-      >
+      <span className="home swiper-button-prev shadow-md">
         <GrPrevious />
       </span>
       <Swiper
@@ -95,7 +92,7 @@ export default function Menu() {
           swiper.allowSlideNext =
             swiper.activeIndex !== swiper.slides.length - swiper.slidesPerViewDynamic();
         }}
-        className="h-full w-full bg-white rounded-2xl shadow-xl"
+        className="h-full w-full rounded-2xl shadow-xl bg-white"
       >
         {menu.map((item: Menu, i) => (
           <SwiperSlide
@@ -103,12 +100,12 @@ export default function Menu() {
             className="flex flex-col gap-y-2 justify-center items-center first:rounded-l-xl last:rounded-r-xl"
           >
             <Link to={item.path}>
-              <img src={item.image} alt={item.name + "Icon"} className="w-12 aspect-square" />
+              <img src={item.image} alt={item.name + "Icon"} className="w-12 h-12" />
             </Link>
             <p className="text-sm font-semibold">{item.name}</p>
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   );
 }

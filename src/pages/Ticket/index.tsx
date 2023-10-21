@@ -22,15 +22,15 @@ export default function TicketPage() {
     <MainLayout>
       <div className="py-10 px-7">
         <Breadcrumbs elements={paths} />
-        <div className="grid grid-cols-11 items-center gap-x-2 my-8">
-          <SearchBar clsx="col-span-7" />
-          <div className="flex justify-center gap-x-2 items-center col-span-4 min-h-[40px] bg-[#FFF0CC] py-2 rounded-xl">
+        <div className="flex flex-col m-sm:flex-row gap-y-2 items-center gap-x-2 my-8">
+          <SearchBar clsx="w-full" />
+          <div className="w-full m-sm:w-fit flex justify-center gap-x-2 items-center min-h-[40px] bg-[#FFF0CC] p-2 rounded-xl">
             <SlLocationPin color="#D49600" strokeWidth="1.5" />
             <span className="font-medium text-sm">Location</span>
             <BsChevronDown color="#D49600" strokeWidth="0.5" />
           </div>
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-y-2 m-sm:flex-row m-sm:items-center m-sm:justify-between">
           <h2 className="font-bold text-md">All Event</h2>
           <div className="flex gap-x-2">
             <div className="flex items-center justify-center gap-x-[6px] p-2 border-2 border-[#EEEEEE] rounded-[40px] min-w-[80px]">
@@ -49,14 +49,17 @@ export default function TicketPage() {
         </div>
         <hr className="mt-5" />
         <p className="text-xs my-6 text-[#4D4D4D]">60 Event on result</p>
-        <div className="grid gap-x-2 gap-y-6 grid-cols-2 mb-20">
+        <div className="grid gap-x-2 gap-y-6 grid-cols-1 m-sm:grid-cols-2 mb-20">
           {Array.from({ length: 10 }).map((_, index) => {
             return (
               <div
                 key={index}
                 className="text-xs col-span-1 flex flex-col p-2 shadow-sm max-h-[330px] rounded-xl bg-white"
               >
-                <img className="h-[100px] w-full bg-cover rounded-xl object-fill" src={Maher} />
+                <img
+                  className="h-[150px] m-sm:h-[100px] m-md:h-[120px] w-full bg-cover rounded-xl object-fill"
+                  src={Maher}
+                />
                 <div className="flex flex-col mt-3">
                   <div className="text-xs flex items-center gap-x-2">
                     <div className="flex gap-x-1 items-center">

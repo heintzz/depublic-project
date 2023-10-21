@@ -29,7 +29,7 @@ const highlight = [
 
 export default function Highlight() {
   return (
-    <>
+    <div className="py-9">
       <Swiper
         modules={[Pagination, Autoplay]}
         loop={true}
@@ -57,6 +57,6 @@ export default function Highlight() {
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   );
 }
