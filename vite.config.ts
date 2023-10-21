@@ -10,6 +10,7 @@ export default defineConfig({
       components: "/src/components",
       pages: "/src/pages",
       utils: "/utils",
+      stores: "/src/stores",
     },
   },
 });

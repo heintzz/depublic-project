@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import TwoBubbleOrnament from "assets/ornaments/two-bubble.svg";
 import ShowHidePassword from "components/Auth/ShowHidePassword";
 import SectionSeparator from "components/SectionSeparator";
+import useUserStore from "stores/user-store";
 import OAuthButton from "./OAuthButton";
 
 import "./Auth.css";
@@ -17,7 +18,9 @@ interface formInput {
   username: string;
   password: string;
 }
+
 const Login = () => {
+  const [login] = useUserStore((state) => [state.login]);
   const [input, setInput] = useState<formInput>(defaultLoginForm);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -29,7 +32,7 @@ const Login = () => {
 
   const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(input);
+    login(input.username);
   };
 
   return (

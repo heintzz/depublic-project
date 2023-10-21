@@ -10,11 +10,22 @@ import Footer from "components/Footer";
 import Maher from "assets/images/maher-zain.png";
 import Search from "assets/icons/search.svg";
 import NavigateButton from "components/NavigateButton";
+import { getUserProfile } from "../../services/userServices";
+
+interface User {
+  username: string;
+  isLogin: boolean;
+}
+
+interface Response {
+  state: User;
+}
 
 export default function DetailPage() {
+  const user: Response = getUserProfile();
+  const isLogin = user.state.isLogin;
   const [activeTab, setActiveTab] = useState("Summary");
-  // TODO: Integate with API
-  // const param = useParams();
+
   const path = useLocation();
   const paths = path.pathname.split("/");
   paths.splice(0, 1);
@@ -54,27 +65,29 @@ export default function DetailPage() {
           <span className="text-[#A103D3]">{ISOToDateString("2023-10-21T10:13:08.115Z")}</span>
         </div>
         <h2 className="text-xl font-bold">Konser Silaturahmi Maher Zain</h2>
-        {/* LOGIN FIRST */}
+
         <div className="relative mt-2">
-          <div className="absolute h-full w-[110%] translate-x-[50%] bg-transparent top-0 right-[50%] backdrop-blur-[4px] grid place-content-center">
-            <div className="flex flex-col items-center gap-y-4 bg-white w-full px-10 py-6 rounded-xl">
-              <div className="flex items-center gap-x-2">
-                <img src={Search} alt="search icon" />
-                <div className="flex flex-col">
-                  <span className="text-lg font-bold">Want to see more details?</span>
-                  <span>Login first to enter this page</span>
+          {isLogin ? null : (
+            <div className="absolute h-full w-[110%] translate-x-[50%] bg-transparent top-0 right-[50%] backdrop-blur-[4px] grid place-content-center">
+              <div className="flex flex-col items-center gap-y-4 bg-white w-full px-10 py-6 rounded-xl">
+                <div className="flex items-center gap-x-2">
+                  <img src={Search} alt="search icon" />
+                  <div className="flex flex-col">
+                    <span className="text-lg font-bold">Want to see more details?</span>
+                    <span>Login first to enter this page</span>
+                  </div>
+                </div>
+                <div className="flex gap-x-3">
+                  <NavigateButton cls="btn-outline" path="/login">
+                    Sign In
+                  </NavigateButton>
+                  <NavigateButton cls="btn-full" path="/signup">
+                    Sign Up
+                  </NavigateButton>
                 </div>
               </div>
-              <div className="flex gap-x-3">
-                <NavigateButton cls="btn-outline" path="/login">
-                  Sign In
-                </NavigateButton>
-                <NavigateButton cls="btn-full" path="/signup">
-                  Sign Up
-                </NavigateButton>
-              </div>
             </div>
-          </div>
+          )}
           <div className="flex flex-col-reverse gap-y-3 m-sm:flex-row m-sm:gap-x-5 items-start text-[#4D4D4D]">
             <div className="text-justify">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, repudiandae! Quam,
@@ -99,7 +112,7 @@ export default function DetailPage() {
           </ul>
         </div>
       </div>
-      <Footer />
+      {isLogin && <Footer />}
     </MainLayout>
   );
 }
