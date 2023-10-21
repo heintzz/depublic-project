@@ -35,7 +35,6 @@ export default function Highlight() {
         loop={true}
         pagination={{ clickable: true }}
         slidesPerView="auto"
-        initialSlide={3}
         centeredSlides={true}
         spaceBetween={10}
         autoplay={{

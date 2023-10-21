@@ -33,7 +33,7 @@ const Login = () => {
   };
 
   return (
-    <>
+    <div className="pb-10">
       <div className="w-full bg-[#FEF6E5] px-7 py-5 font-bold relative z-10">Sign In</div>
       <div className="px-7 pt-7 relative">
         <img
@@ -85,7 +85,7 @@ const Login = () => {
           <OAuthButton />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
