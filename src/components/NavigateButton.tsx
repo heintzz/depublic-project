@@ -25,7 +25,7 @@ export default function NavigateButton(props: ButtonProps) {
     return (
       <Link
         to={path}
-        className={`px-7 py-[10px] rounded-xl text-[${color}] bg-white outline-[${color}] font-semibold`}
+        className={`px-7 py-[10px] rounded-xl text-[${color}] bg-white border-[${color}] border-2 font-semibold`}
       >
         {children}
       </Link>

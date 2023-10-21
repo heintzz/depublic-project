@@ -12,7 +12,7 @@ import Concert from "assets/images/concert.png";
 
 export default function PopularBlog() {
   return (
-    <div className="py-6">
+    <div className="pt-6">
       <div className="flex justify-between items-center px-7">
         <p className="font-semibold">Popular Blog</p>
         <p className="text-xs text-gray-400 relative">

@@ -10,7 +10,7 @@ export default function Breadcrumbs(props: BreadcrumbProps) {
   const { elements } = props;
 
   return (
-    <nav className="flex text-sm" aria-label="Breadcrumb">
+    <nav className="flex text-xs" aria-label="Breadcrumb">
       <ol className="inline-flex items-center space-x-1 md:space-x-3">
         <li className="inline-flex items-center">
           <a href="/">Home</a>

@@ -20,7 +20,7 @@ export default function TicketPage() {
 
   return (
     <MainLayout>
-      <div className="py-10 px-7">
+      <div className="pt-8 px-7">
         <Breadcrumbs elements={paths} />
         <div className="flex flex-col m-sm:flex-row gap-y-2 items-center gap-x-2 my-8">
           <SearchBar clsx="w-full" />
