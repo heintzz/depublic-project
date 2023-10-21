@@ -1,12 +1,12 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import TwoBubbleOrnament from "assets/ornaments/two-bubble.svg";
 import ShowHidePassword from "components/Auth/ShowHidePassword";
 import SectionSeparator from "components/SectionSeparator";
-import useUserStore from "stores/user-store";
 import OAuthButton from "./OAuthButton";
 
+import useUserStore from "stores/user-store";
 import "./Auth.css";
 
 const defaultLoginForm = {
@@ -21,6 +21,7 @@ interface formInput {
 
 const Login = () => {
   const [login] = useUserStore((state) => [state.login]);
+  const navigate = useNavigate();
   const [input, setInput] = useState<formInput>(defaultLoginForm);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -30,9 +31,12 @@ const Login = () => {
     });
   };
 
-  const handleFormSubmit = (e: FormEvent) => {
+  const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    login(input.username);
+    const data = await login(input.username);
+    if (data) {
+      navigate("/");
+    }
   };
 
   return (
@@ -71,7 +75,7 @@ const Login = () => {
             type="submit"
             className="w-full p-4 my-10 rounded-xl bg-[#A103D3] text-white font-semibold"
           >
-            Create Account
+            Sign In
           </button>
           <p className="text-center text-sm text-gray-400">
             Don't have an Account?{" "}

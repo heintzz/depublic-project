@@ -6,7 +6,10 @@ const OAuth = () => {
     <>
       {[BsApple, FcGoogle, BsFacebook].map((Icon, index) => {
         return (
-          <div className="w-20 h-20 grid place-items-center bg-white p-6 rounded-[20px] drop-shadow-[2px_4px_4px_rgba(0,0,0,0.07)]">
+          <div
+            key={index}
+            className="w-20 h-20 grid place-items-center bg-white p-6 rounded-[20px] drop-shadow-[2px_4px_4px_rgba(0,0,0,0.07)]"
+          >
             <Icon size="2.25em" fill={index < 2 ? "inherit" : "#0866FF"} />
           </div>
         );

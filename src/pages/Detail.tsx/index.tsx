@@ -2,24 +2,16 @@ import Breadcrumbs from "components/Breadcrumbs";
 import MainLayout from "components/MainLayout";
 import { useLocation } from "react-router-dom";
 
+import Footer from "components/Footer";
 import { useState } from "react";
 import { SlLocationPin } from "react-icons/sl";
 import { ISOToDateString } from "utils/helper";
-import Footer from "components/Footer";
 
-import Maher from "assets/images/maher-zain.png";
 import Search from "assets/icons/search.svg";
+import Maher from "assets/images/maher-zain.png";
 import NavigateButton from "components/NavigateButton";
+import { Response } from "src/types/response.type";
 import { getUserProfile } from "../../services/userServices";
-
-interface User {
-  username: string;
-  isLogin: boolean;
-}
-
-interface Response {
-  state: User;
-}
 
 export default function DetailPage() {
   const user: Response = getUserProfile();

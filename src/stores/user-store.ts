@@ -4,7 +4,9 @@ import { persist } from "zustand/middleware";
 interface UserState {
   isLogin: boolean;
   username: string;
-  login: (username: string) => void;
+  login: (username: string) => Promise<{
+    username: string;
+  }>;
 }
 
 const useUserStore = create<UserState>()(
@@ -17,6 +19,7 @@ const useUserStore = create<UserState>()(
         const data = await response.json();
         set({ username: data.name || "mhasnanr" });
         set({ isLogin: true });
+        return data;
       },
     }),
     {
