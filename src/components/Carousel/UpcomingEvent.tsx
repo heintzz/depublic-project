@@ -1,5 +1,6 @@
 import { FreeMode, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { ISOToDateString } from "utils/helper";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -26,20 +27,23 @@ export default function UpcomingEvent() {
       >
         {[1, 2, 3, 4, 5].map((_, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col p-4 w-[100%] max-w-[320px] min-h-[300px] rounded-xl bg-white shadow-md border">
+            <div className="flex flex-col text-xs p-4 w-[100%] max-w-[320px] min-h-[300px] rounded-xl bg-white shadow-md border">
               <img className="h-[150px] w-full bg-cover rounded-xl object-fill" src={Maher} />
               <div className="flex flex-col mt-5">
-                <div className="text-xs flex gap-x-2">
+                <div className="flex gap-x-2">
                   <div className="flex gap-x-1 items-center">
                     <SlLocationPin size="1.25em" /> BANDUNG
                   </div>
-                  | <span className="text-[#A103D3]">DAY, MON TANGGAL</span>
+                  |{" "}
+                  <span className="text-[#A103D3]">
+                    {ISOToDateString("2023-10-21T10:13:08.115Z")}
+                  </span>
                 </div>
                 <div className="flex flex-col gap-y-1 mt-2">
                   <h1 className="font-bold text-lg">Judul Event</h1>
                   <p className="text-sm">Lorem ipsum dolor sit amet consectet</p>
                 </div>
-                <div className="my-4 text-lg">
+                <div className="flex flex-wrap items-end my-4 text-lg">
                   <span className="font-bold text-[#A103D3]">IDR 1.999.000</span>
                   <span>/ 1 Person</span>
                 </div>
