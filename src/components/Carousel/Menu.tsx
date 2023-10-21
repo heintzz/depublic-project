@@ -4,12 +4,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/scrollbar";
-import "./HomeCarousel.css";
+import "./Carousel.css";
 
 import TicketIcon from "assets/images/ticket.png";
 import RegistrationIcon from "assets/images/registration.png";
 import BookingIcon from "assets/images/booking.png";
 import StoreIcon from "assets/images/store.png";
+import { GrNext, GrPrevious } from "react-icons/gr";
 
 interface Menu {
   name: string;
@@ -51,16 +52,23 @@ const menu = [
   },
 ];
 
-export default function HomeCarousel() {
+export default function Menu() {
   return (
     <>
-      <div className="swiper-button-next"></div>
-      <div className="swiper-button-prev"></div>
+      <span className="home swiper-button-next rounded-full w-8 aspect-square bg-red-200 grid place-items-center">
+        <GrNext />
+      </span>
+      <span
+        className="home swiper-button-prev rounded-full w-8
+       aspect-square bg-red-200 grid place-items-center"
+      >
+        <GrPrevious />
+      </span>
       <Swiper
         modules={[Navigation]}
         navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: ".home.swiper-button-next",
+          prevEl: ".home.swiper-button-prev",
         }}
         slidesPerView={2}
         breakpoints={{

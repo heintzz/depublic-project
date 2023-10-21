@@ -1,12 +1,15 @@
-import { BiSearch } from "react-icons/bi";
+import Menu from "components/Carousel/Menu";
+import Highlight from "components/Carousel/Highlight";
+import UpcomingEvent from "components/Carousel/UpcomingEvent";
 import MainLayout from "components/MainLayout";
 import NavigateButton from "components/NavigateButton";
+import SectionSeparator from "components/SectionSeparator";
 
 import DepublicBrand from "assets/icons/depublic-brand.svg";
 import TwoBubbleOrnament from "assets/ornaments/two-bubble.svg";
-import HomeCarousel from "components/Home/HomeCarousel";
-import SectionSeparator from "components/SectionSeparator";
-import HighlightCarousel from "components/Home/HighlightCarousel";
+
+import { GrNext, GrPrevious } from "react-icons/gr";
+import { BiSearch } from "react-icons/bi";
 
 export default function HomePage() {
   return (
@@ -34,31 +37,37 @@ export default function HomePage() {
           </NavigateButton>
         </div>
         <div className="absolute bottom-0 right-[50%] translate-x-[50%] translate-y-[50%] w-full px-7  h-24">
-          <HomeCarousel />
+          <Menu />
         </div>
       </div>
       <SectionSeparator clsx="mt-20" />
       <div className="py-9">
-        <HighlightCarousel />
+        <Highlight />
       </div>
-      <div className="px-7 last:pl-7 pb-6">
-        <div className="flex justify-between items-center">
+      <div className="pb-6">
+        <div className="flex justify-between items-center px-7 ">
           <p className="font-semibold">Upcoming Event</p>
-          <p className="text-xs text-gray-400">See All</p>
+          <p className="text-xs text-gray-400 relative">
+            <span> See All</span>
+            <span className="event swiper-button-next rounded-full w-6 aspect-square bg-red-200 grid place-items-center">
+              <GrNext />
+            </span>
+            <span className="event swiper-button-prev rounded-full w-6 aspect-square bg-red-200 grid place-items-center">
+              <GrPrevious />
+            </span>
+          </p>
         </div>
-        <div className="pt-6">
-          <div className="w-[180px] h-[150px] bg-red-200 rounded-xl">miaw</div>
+        <div className="pt-7">
+          <UpcomingEvent />
         </div>
       </div>
       <SectionSeparator />
-      <div className="px-7 last:pl-7 py-6">
-        <div className="flex justify-between items-center">
-          <p className="font-semibold">Upcoming Event</p>
+      <div className="py-6">
+        <div className="flex justify-between items-center px-7">
+          <p className="font-semibold">Popular Blog</p>
           <p className="text-xs text-gray-400">See All</p>
         </div>
-        <div className="pt-6">
-          <div className="w-[180px] h-[150px] bg-red-200 rounded-xl">miaw</div>
-        </div>
+        <div className="pt-7">{/* <UpcomingEventCarousel /> */}</div>
       </div>
       <div className="px-7 py-12 bg-purple-900">
         <div className="flex gap-x-5">
