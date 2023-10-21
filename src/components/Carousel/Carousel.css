@@ -4,6 +4,7 @@
   right: 8px;
   transform: translateY(-50%);
   top: 50%;
+  cursor: pointer;
 }
 
 .home.swiper-button-prev {
@@ -12,6 +13,7 @@
   left: 8px;
   transform: translateY(-50%);
   top: 50%;
+  cursor: pointer;
 }
 
 .event.swiper-button-next {
@@ -20,6 +22,7 @@
   top: 50%;
   left: -40px;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .event.swiper-button-prev {
@@ -29,6 +32,7 @@
   top: 50%;
   left: -70px;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .adjust-gap:nth-of-type(n + 2) {
