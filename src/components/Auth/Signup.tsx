@@ -40,11 +40,10 @@ export default function Signup() {
     (async () => {
       setLoading(true);
       try {
-        const res = await authServices.handleUserSignup(input.email, input.password);
-        console.log(res);
+        await authServices.handleUserSignup(input.email, input.password);
         setLoading(false);
       } catch (error) {
-        console.log(error);
+        console.error(error);
         setLoading(false);
       }
     })();

@@ -40,11 +40,12 @@ const Login = () => {
       setLoading(true);
       try {
         const res = await authServices.handleUserLogin(input.email, input.password);
-        tokenServices.setAccessToken(res.refreshToken);
+        const accessToken = await res.getIdToken();
+        tokenServices.setAccessToken(accessToken);
         setLoading(false);
         navigate("/");
       } catch (error) {
-        console.log(error);
+        console.error(error);
         setLoading(false);
       }
     })();

@@ -7,6 +7,7 @@ import "./Carousel.css";
 
 import Btob from "assets/images/btob.png";
 import Maher from "assets/images/maher-zain.png";
+import { Link } from "react-router-dom";
 
 const highlight = [
   {
@@ -45,14 +46,16 @@ export default function Highlight() {
         {highlight.map((item, index) => (
           <SwiperSlide key={index} className="h-[200px] max-w-[calc(100%-54px)] mb-12">
             {({ isActive }) => (
-              <div
-                className={` ${
-                  isActive ? "h-[200px]" : "h-[180px] mt-[10px]"
-                } rounded-2xl bg-cover`}
-                style={{
-                  backgroundImage: `url(${item.image})`,
-                }}
-              ></div>
+              <Link to={`/ticket/${index}`}>
+                <div
+                  className={` ${
+                    isActive ? "h-[200px]" : "h-[180px] mt-[10px]"
+                  } rounded-2xl bg-cover`}
+                  style={{
+                    backgroundImage: `url(${item.image})`,
+                  }}
+                ></div>
+              </Link>
             )}
           </SwiperSlide>
         ))}
