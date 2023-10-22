@@ -7,7 +7,7 @@ import SectionSeparator from "components/SectionSeparator";
 import OAuthButton from "./OAuthButton";
 
 import Loader from "components/Loader";
-import { authServices } from "../../services/auth.services";
+import { authServices } from "services/auth.services";
 import "./Auth.css";
 
 const defaultSignupForm = {

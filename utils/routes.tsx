@@ -4,7 +4,7 @@ import { LoginPage } from "pages/Login";
 import { SignupPage } from "pages/Signup";
 import TicketPage from "pages/Ticket";
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
-import { tokenServices } from "../src/services/token.services";
+import { tokenServices } from "services/token.services";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

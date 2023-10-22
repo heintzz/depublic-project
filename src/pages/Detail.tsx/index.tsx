@@ -10,10 +10,11 @@ import { ISOToDateString } from "utils/helper";
 import Search from "assets/icons/search.svg";
 import Maher from "assets/images/maher-zain.png";
 import NavigateButton from "components/NavigateButton";
+import { tokenServices } from "src/services/token.services";
 
 export default function DetailPage() {
+  const isLogin = tokenServices.getAccessToken();
   const [activeTab, setActiveTab] = useState("Summary");
-  const isLogin = true;
   const path = useLocation();
   const paths = path.pathname.split("/");
   paths.splice(0, 1);
@@ -53,7 +54,6 @@ export default function DetailPage() {
           <span className="text-[#A103D3]">{ISOToDateString("2023-10-21T10:13:08.115Z")}</span>
         </div>
         <h2 className="text-xl font-bold">Konser Silaturahmi Maher Zain</h2>
-
         <div className="relative mt-2">
           {isLogin ? null : (
             <div className="absolute h-full w-[110%] translate-x-[50%] bg-transparent top-0 right-[50%] backdrop-blur-[4px] grid place-content-center">
@@ -100,7 +100,7 @@ export default function DetailPage() {
           </ul>
         </div>
       </div>
-      <Footer />
+      {isLogin && <Footer />}
     </MainLayout>
   );
 }

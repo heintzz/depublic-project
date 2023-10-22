@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { authServices } from "../../services/auth.services";
-
+import { authServices } from "services/auth.services";
+import { tokenServices } from "services/token.services";
 import TwoBubbleOrnament from "assets/ornaments/two-bubble.svg";
 import ShowHidePassword from "components/Auth/ShowHidePassword";
 import Loader from "components/Loader";
@@ -9,7 +9,6 @@ import SectionSeparator from "components/SectionSeparator";
 import OAuthButton from "./OAuthButton";
 
 import "./Auth.css";
-import { tokenServices } from "../../services/token.services";
 
 const defaultLoginForm = {
   email: "",

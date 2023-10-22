@@ -9,8 +9,9 @@ export default defineConfig({
       assets: "/src/assets",
       components: "/src/components",
       pages: "/src/pages",
+      config: "/src/config",
+      services: "/src/services",
       utils: "/utils",
-      stores: "/src/stores",
     },
   },
 });

@@ -4,7 +4,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { getUserAuth } from "../config/firebase";
+import { getUserAuth } from "config/firebase";
 
 const handleUserSignup = async (email: string, password: string): Promise<User> => {
   return createUserWithEmailAndPassword(getUserAuth(), email, password)
