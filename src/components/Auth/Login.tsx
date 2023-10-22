@@ -69,6 +69,8 @@ const Login = () => {
           <input
             name="email"
             type="email"
+            value={input.email}
+            autoComplete="email"
             placeholder="Email"
             className="input-field"
             onChange={handleInputChange}
@@ -76,8 +78,9 @@ const Login = () => {
           <div className="relative">
             <input
               name="password"
-              value={input?.password}
+              value={input.password}
               type={showPassword ? "text" : "password"}
+              autoComplete="current-password"
               placeholder="Password"
               className="input-field"
               onChange={handleInputChange}

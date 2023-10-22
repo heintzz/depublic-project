@@ -69,6 +69,8 @@ export default function Signup() {
           <input
             name="username"
             type="text"
+            value={input.username}
+            autoComplete="username"
             placeholder="Username"
             className="input-field"
             onChange={handleInputChange}
@@ -76,6 +78,8 @@ export default function Signup() {
           <input
             name="email"
             type="email"
+            value={input.email}
+            autoComplete="email"
             placeholder="Email"
             className="input-field"
             onChange={handleInputChange}
@@ -83,7 +87,8 @@ export default function Signup() {
           <div className="relative">
             <input
               name="password"
-              value={input?.password}
+              value={input.password}
+              autoComplete="current-password"
               type={showPassword ? "text" : "password"}
               placeholder="Password"
               className="input-field"

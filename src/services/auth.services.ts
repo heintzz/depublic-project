@@ -26,11 +26,12 @@ const handleUserLogin = async (email: string, password: string): Promise<User> =
       return user;
     })
     .catch((error) => {
-      return error;
+      throw new Error(error);
     });
 };
 
 const handleGoogleOauth = async (): Promise<string | undefined> => {
+  console.log(auth);
   return signInWithPopup(auth, googleProvider)
     .then((result) => {
       console.log("Result: ", result);
