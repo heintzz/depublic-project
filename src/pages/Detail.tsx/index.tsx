@@ -66,10 +66,10 @@ export default function DetailPage() {
                   </div>
                 </div>
                 <div className="flex gap-x-3">
-                  <NavigateButton cls="btn-outline" path="/login">
+                  <NavigateButton mode="btn-md-outline" path="/login">
                     Sign In
                   </NavigateButton>
-                  <NavigateButton cls="btn-full" path="/signup">
+                  <NavigateButton mode="btn-md-full" path="/signup">
                     Sign Up
                   </NavigateButton>
                 </div>

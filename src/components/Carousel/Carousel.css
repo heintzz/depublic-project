@@ -19,7 +19,7 @@
 
 .home.swiper-button-next {
   position: absolute;
-  z-index: 20;
+  z-index: 2;
   right: 8px;
   transform: translateY(-50%);
   top: 50%;
@@ -28,7 +28,7 @@
 
 .home.swiper-button-prev {
   position: absolute;
-  z-index: 20;
+  z-index: 2;
   left: 8px;
   transform: translateY(-50%);
   top: 50%;
@@ -37,7 +37,6 @@
 
 .event.swiper-button-next {
   position: absolute;
-  z-index: 20;
   top: 50%;
   left: -40px;
   transform: translateY(-50%);
@@ -46,7 +45,6 @@
 
 .event.swiper-button-prev {
   position: absolute;
-  z-index: 20;
   top: 0;
   top: 50%;
   left: -70px;
@@ -56,7 +54,6 @@
 
 .blog.swiper-button-next {
   position: absolute;
-  z-index: 20;
   top: 50%;
   left: -40px;
   transform: translateY(-50%);
@@ -65,7 +62,6 @@
 
 .blog.swiper-button-prev {
   position: absolute;
-  z-index: 20;
   top: 0;
   top: 50%;
   left: -70px;

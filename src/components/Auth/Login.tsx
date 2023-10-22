@@ -53,17 +53,17 @@ const Login = () => {
   return (
     <div className="pb-10">
       {loading && <Loader />}
-      <div className="w-full bg-[#FEF6E5] px-7 py-5 font-bold relative z-10">Sign In</div>
+      <div className="w-full bg-[#FEF6E5] px-7 py-5 font-bold relative z-[1]">Sign In</div>
       <div className="px-7 pt-7 relative">
         <img
           src={TwoBubbleOrnament}
           alt="bubble ornament"
           className="absolute -top-3 right-0 w-24 z-0"
         />
-        <p className="font-semibold relative z-20">Welcome back!</p>
+        <p className="font-semibold relative z-[1]">Welcome back!</p>
         <form
           onSubmit={handleFormSubmit}
-          className="flex flex-col relative z-20 gap-y-4 my-5 last:gap-y-0"
+          className="flex flex-col relative z-[1] gap-y-4 my-5 last:gap-y-0"
         >
           <input
             name="email"
@@ -97,7 +97,7 @@ const Login = () => {
           </p>
         </form>
       </div>
-      <SectionSeparator clsx="mt-6 mb-10" />
+      <SectionSeparator additionalClassname="mt-6 mb-10" />
       <div className="flex flex-col items-center">
         <p className="mb-8">atau login dengan</p>
         <div className="grid grid-cols-3 gap-x-5">

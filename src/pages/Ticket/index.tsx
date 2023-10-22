@@ -23,7 +23,7 @@ export default function TicketPage() {
       <div className="pt-8 px-7">
         <Breadcrumbs elements={paths} />
         <div className="flex flex-col m-sm:flex-row gap-y-2 items-center gap-x-2 my-8">
-          <SearchBar clsx="w-full" />
+          <SearchBar additionalClassname="w-full" />
           <div className="w-full m-sm:w-fit flex justify-center gap-x-2 items-center min-h-[40px] bg-[#FFF0CC] p-2 rounded-xl">
             <SlLocationPin color="#D49600" strokeWidth="1.5" />
             <span className="font-medium text-sm">Location</span>

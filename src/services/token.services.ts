@@ -6,7 +6,7 @@ const setAccessToken = (token: string) => {
 };
 
 const getAccessToken = () => {
-  return Cookie.get("accessToken");
+  return Cookie.get("accessToken") || null;
 };
 
 const redirectToHome = () => {

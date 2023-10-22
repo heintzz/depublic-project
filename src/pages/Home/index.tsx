@@ -23,13 +23,13 @@ export default function HomePage() {
         <SearchBar />
         <div className="mt-14 pb-28 relative z-[1]">
           <p className="max-w-[200px] text-3xl font-semibold mb-6">Tagline Hero Section</p>
-          <NavigateButton path="#" cls="btn-full">
+          <NavigateButton path="#" mode="btn-md-full">
             Download Aplikasi
           </NavigateButton>
         </div>
         <Menu />
       </div>
-      <SectionSeparator clsx="mt-20" />
+      <SectionSeparator additionalClassname="mt-20" />
       <Highlight />
       <UpcomingEvent />
       <SectionSeparator />

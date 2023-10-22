@@ -8,9 +8,9 @@ export default function Footer() {
           <img src={DepublicBrand} width={160} />
           <span className="mt-6 mb-9">"Tagline company"</span>
           <div className="flex gap-x-2">
-            <div className="grid place-items-center w-10 h-10 spect-square bg-[#6B028D] rounded-full"></div>
-            <div className="grid place-items-center w-10 h-10  bg-[#6B028D] rounded-full"></div>
-            <div className="grid place-items-center w-10 h-10  bg-[#6B028D] rounded-full"></div>
+            <div className="grid place-items-center w-10 h-10 bg-[#6B028D] rounded-full"></div>
+            <div className="grid place-items-center w-10 h-10 bg-[#6B028D] rounded-full"></div>
+            <div className="grid place-items-center w-10 h-10 bg-[#6B028D] rounded-full"></div>
           </div>
         </div>
         <div className="flex justify-between w-[50%]">

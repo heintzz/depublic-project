@@ -1,10 +1,12 @@
 import { BiSearch } from "react-icons/bi";
 
-export default function SearchBar(props: { clsx?: string }) {
-  const { clsx } = props;
+export default function SearchBar(props: { additionalClassname?: string }) {
+  const { additionalClassname } = props;
 
   return (
-    <div className={`relative backdrop-blur-xl border-gray-300 border rounded-xl ${clsx}`}>
+    <div
+      className={`relative backdrop-blur-xl border-gray-300 border rounded-xl ${additionalClassname}`}
+    >
       <input
         type="text"
         placeholder="Search Activities"

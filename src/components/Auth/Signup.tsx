@@ -53,17 +53,17 @@ export default function Signup() {
   return (
     <div className="pb-10">
       {loading && <Loader />}
-      <div className="w-full bg-[#FEF6E5] px-7 py-5 font-bold relative z-10">Sign Up</div>
+      <div className="w-full bg-[#FEF6E5] px-7 py-5 font-bold relative z-[1]">Sign Up</div>
       <div className="px-7 pt-7 relative">
         <img
           src={TwoBubbleOrnament}
           alt="bubble ornament"
           className="absolute -top-3 right-0 w-24 z-0"
         />
-        <p className="font-semibold relative z-20">Register for the better experience</p>
+        <p className="font-semibold relative z-[1]">Register for the better experience</p>
         <form
           onSubmit={handleFormSubmit}
-          className="flex flex-col gap-y-4 my-5 last:gap-y-0 relative z-20"
+          className="flex flex-col gap-y-4 my-5 last:gap-y-0 relative z-[1]"
         >
           <input
             name="username"
@@ -104,7 +104,7 @@ export default function Signup() {
           </p>
         </form>
       </div>
-      <SectionSeparator clsx="mt-6 mb-10" />
+      <SectionSeparator additionalClassname="mt-6 mb-10" />
       <div className="flex flex-col items-center">
         <p className="mb-8">atau daftar dengan</p>
         <div className="grid grid-cols-3 gap-x-5">
