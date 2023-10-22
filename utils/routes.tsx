@@ -3,9 +3,8 @@ import HomePage from "pages/Home";
 import { LoginPage } from "pages/Login";
 import { SignupPage } from "pages/Signup";
 import TicketPage from "pages/Ticket";
-import { createBrowserRouter, createRoutesFromElements, redirect, Route } from "react-router-dom";
-import { getUserProfile } from "../src/services/userServices";
-import { Response } from "../src/types/response.type";
+import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
+import { tokenServices } from "../src/services/token.services";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -14,25 +13,9 @@ const router = createBrowserRouter(
       <Route
         path="/signup"
         element={<SignupPage />}
-        loader={() => {
-          const user: Response = getUserProfile();
-          if (user.state.isLogin) {
-            return redirect("/");
-          }
-          return null;
-        }}
+        loader={() => tokenServices.redirectToHome()}
       />
-      <Route
-        path="/login"
-        element={<LoginPage />}
-        loader={() => {
-          const user: Response = getUserProfile();
-          if (user.state.isLogin) {
-            return redirect("/");
-          }
-          return null;
-        }}
-      />
+      <Route path="/login" element={<LoginPage />} loader={() => tokenServices.redirectToHome()} />
       <Route path="/ticket" element={<TicketPage />} />
       <Route path="/ticket/:id" element={<DetailPage />} />
       <Route path="*" element={<TicketPage />} />

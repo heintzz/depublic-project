@@ -1,28 +1,28 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Player } from "@lottiefiles/react-lottie-player";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import TwoBubbleOrnament from "assets/ornaments/two-bubble.svg";
 import ShowHidePassword from "components/Auth/ShowHidePassword";
 import SectionSeparator from "components/SectionSeparator";
 import OAuthButton from "./OAuthButton";
 
+import Loader from "components/Loader";
+import { authServices } from "../../services/auth.services";
 import "./Auth.css";
 
 const defaultSignupForm = {
   username: "",
-  phoneNumber: "",
+  email: "",
   password: "",
 };
 
 interface formInput {
   username: string;
-  phoneNumber: string;
+  email: string;
   password: string;
 }
 
 export default function Signup() {
-  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [input, setInput] = useState<formInput>(defaultSignupForm);
   const [showPassword, setShowPassword] = useState(false);
@@ -35,29 +35,24 @@ export default function Signup() {
 
   const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      navigate("/login");
-    }, 3000);
+    if (!input.email || !input.password) return;
+
+    (async () => {
+      setLoading(true);
+      try {
+        const res = await authServices.handleUserSignup(input.email, input.password);
+        console.log(res);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+        setLoading(false);
+      }
+    })();
   };
 
   return (
     <div className="pb-10">
-      {loading && (
-        <div className="absolute top-0 bottom-0 z-30 backdrop-blur w-full grid place-items-center">
-          <div className="w-[90%] px-5 pb-5 rounded-2xl bg-white min-h-[200px] max-w-[800px] mb-60 drop-shadow-lg flex flex-col items-center justify-center">
-            <Player
-              autoplay
-              loop
-              src="https://lottie.host/e2d476b5-f5af-4c83-bd96-45fd69a0cffd/s2KiGcK87D.json"
-              style={{ height: "100px", width: "250px" }}
-            />
-            <p className="font-bold">Being Processed</p>
-            <p className="text-xs">Wait a moment...</p>
-          </div>
-        </div>
-      )}
+      {loading && <Loader />}
       <div className="w-full bg-[#FEF6E5] px-7 py-5 font-bold relative z-10">Sign Up</div>
       <div className="px-7 pt-7 relative">
         <img
@@ -78,9 +73,9 @@ export default function Signup() {
             onChange={handleInputChange}
           />
           <input
-            name="phoneNumber"
-            type="text"
-            placeholder="Phone Number"
+            name="email"
+            type="email"
+            placeholder="Email"
             className="input-field"
             onChange={handleInputChange}
           />

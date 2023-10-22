@@ -1,28 +1,30 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { authServices } from "../../services/auth.services";
 
 import TwoBubbleOrnament from "assets/ornaments/two-bubble.svg";
 import ShowHidePassword from "components/Auth/ShowHidePassword";
+import Loader from "components/Loader";
 import SectionSeparator from "components/SectionSeparator";
 import OAuthButton from "./OAuthButton";
 
-import useUserStore from "stores/user-store";
 import "./Auth.css";
+import { tokenServices } from "../../services/token.services";
 
 const defaultLoginForm = {
-  username: "",
+  email: "",
   password: "",
 };
 
 interface formInput {
-  username: string;
+  email: string;
   password: string;
 }
 
 const Login = () => {
-  const [login] = useUserStore((state) => [state.login]);
   const navigate = useNavigate();
   const [input, setInput] = useState<formInput>(defaultLoginForm);
+  const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -31,16 +33,27 @@ const Login = () => {
     });
   };
 
-  const handleFormSubmit = async (e: FormEvent) => {
+  const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const data = await login(input.username);
-    if (data) {
-      navigate("/");
-    }
+    if (!input.email || !input.password) return;
+
+    (async () => {
+      setLoading(true);
+      try {
+        const res = await authServices.handleUserLogin(input.email, input.password);
+        tokenServices.setAccessToken(res.refreshToken);
+        setLoading(false);
+        navigate("/");
+      } catch (error) {
+        console.log(error);
+        setLoading(false);
+      }
+    })();
   };
 
   return (
     <div className="pb-10">
+      {loading && <Loader />}
       <div className="w-full bg-[#FEF6E5] px-7 py-5 font-bold relative z-10">Sign In</div>
       <div className="px-7 pt-7 relative">
         <img
@@ -54,9 +67,9 @@ const Login = () => {
           className="flex flex-col relative z-20 gap-y-4 my-5 last:gap-y-0"
         >
           <input
-            name="username"
-            type="text"
-            placeholder="Username"
+            name="email"
+            type="email"
+            placeholder="Email"
             className="input-field"
             onChange={handleInputChange}
           />

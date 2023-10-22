@@ -10,14 +10,10 @@ import { ISOToDateString } from "utils/helper";
 import Search from "assets/icons/search.svg";
 import Maher from "assets/images/maher-zain.png";
 import NavigateButton from "components/NavigateButton";
-import { Response } from "src/types/response.type";
-import { getUserProfile } from "../../services/userServices";
 
 export default function DetailPage() {
-  const user: Response = getUserProfile();
-  const isLogin = user.state.isLogin;
   const [activeTab, setActiveTab] = useState("Summary");
-
+  const isLogin = true;
   const path = useLocation();
   const paths = path.pathname.split("/");
   paths.splice(0, 1);
@@ -104,7 +100,7 @@ export default function DetailPage() {
           </ul>
         </div>
       </div>
-      {isLogin && <Footer />}
+      <Footer />
     </MainLayout>
   );
 }
