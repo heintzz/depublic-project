@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import TwoBubbleOrnament from "assets/ornaments/two-bubble.svg";
 import ShowHidePassword from "components/Auth/ShowHidePassword";
@@ -23,6 +23,7 @@ interface formInput {
 }
 
 export default function Signup() {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [input, setInput] = useState<formInput>(defaultSignupForm);
   const [showPassword, setShowPassword] = useState(false);
@@ -42,6 +43,7 @@ export default function Signup() {
       try {
         await authServices.handleUserSignup(input.email, input.password);
         setLoading(false);
+        navigate("/login");
       } catch (error) {
         console.error(error);
         setLoading(false);
