@@ -10,7 +10,7 @@ import { ISOToDateString } from "utils/helper";
 import Search from "assets/icons/search.svg";
 import Maher from "assets/images/maher-zain.png";
 import NavigateButton from "components/NavigateButton";
-import { tokenServices } from "src/services/token.services";
+import { tokenServices } from "services/token.services";
 
 export default function DetailPage() {
   const isLogin = tokenServices.getAccessToken();
