@@ -4,13 +4,12 @@ import { GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: `${import.meta.env.VITE_FIREBASE_API_KEY}`,
-  authDomain: "depublic-project.firebaseapp.com",
-  projectId: "depublic-project",
-  storageBucket: "depublic-project.appspot.com",
-  messagingSenderId: "903230214740",
-  appId: "1:903230214740:web:8663c3ba710ae7125dd3c1",
+  authDomain: "depublic-v1.firebaseapp.com",
+  projectId: "depublic-v1",
+  storageBucket: "depublic-v1.appspot.com",
+  messagingSenderId: "649201283036",
+  appId: "1:649201283036:web:c0a5a271e59bf388caa919",
 };
-
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
