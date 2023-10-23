@@ -16,6 +16,8 @@ export default {
       "primary-500": "#A103D3",
       "primary-700": "#6B028D",
       "primary-900": "#360146",
+      "neutral-100": "#EEEEEE",
+      "neutral-200": "#FAFAFA",
       "neutral-300": "#A6A6A6",
       "neutral-500": "#4D4D4D",
       "secondary-700": "#D49600",
