@@ -5,30 +5,39 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./Carousel.css";
 
-import Btob from "assets/images/btob.png";
-import Maher from "assets/images/maher-zain.png";
 import { Link } from "react-router-dom";
+import { EventType } from "src/types/highlight.type";
 
-const highlight = [
-  {
-    name: "BTOB",
-    image: Btob,
-  },
-  {
-    name: "Maher Zain",
-    image: Maher,
-  },
-  {
-    name: "BTOB",
-    image: Btob,
-  },
-  {
-    name: "Maher Zain",
-    image: Maher,
-  },
-];
+// NOTE: dummy data
+// const highlight = [
+//   {
+//     name: "BTOB",
+//     image: Btob,
+//   },
+//   {
+//     name: "Maher Zain",
+//     image: Maher,
+//   },
+//   {
+//     name: "BTOB",
+//     image: Btob,
+//   },
+//   {
+//     name: "Maher Zain",
+//     image: Maher,
+//   },
+// ];
 
-export default function Highlight() {
+interface HighlightProps {
+  loading: boolean;
+  data: EventType[];
+}
+
+export default function Highlight(props: HighlightProps) {
+  if (props.loading) {
+    return <p className="px-7">....</p>;
+  }
+
   return (
     <div className="py-9">
       <Swiper
@@ -43,10 +52,10 @@ export default function Highlight() {
         }}
         className="rounded-2xl"
       >
-        {highlight.map((item, index) => (
+        {props.data.map((item, index) => (
           <SwiperSlide key={index} className="h-[200px] max-w-[calc(100%-54px)] mb-12">
             {({ isActive }) => (
-              <Link to={`/ticket/${index}`}>
+              <Link to={`/ticket/${item.id}`}>
                 <div
                   className={` ${
                     isActive ? "h-[200px]" : "h-[180px] mt-[10px]"

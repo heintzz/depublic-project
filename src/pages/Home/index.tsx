@@ -10,8 +10,28 @@ import TwoBubbleOrnament from "assets/ornaments/two-bubble.svg";
 import PopularBlog from "components/Carousel/PopularBlog";
 import Footer from "components/Footer";
 import SearchBar from "components/SearchBar";
+import { useEffect, useState } from "react";
+import { SummaryType } from "src/types/highlight.type";
+import { highlightServices } from "services/highlight.services";
 
 export default function HomePage() {
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<SummaryType>();
+
+  useEffect(() => {
+    (async () => {
+      setLoading(true);
+      try {
+        const res = await highlightServices.getHighlight();
+        setData(res.data);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+        setLoading(false);
+      }
+    })();
+  }, []);
+
   return (
     <MainLayout>
       <div className="bg-[#FEF6E5] px-7 pt-12 relative text-base">
@@ -30,10 +50,10 @@ export default function HomePage() {
         <Menu />
       </div>
       <SectionSeparator additionalClassname="mt-20" />
-      <Highlight />
-      <UpcomingEvent />
+      <Highlight loading={loading} data={data?.top_events || []} />
+      <UpcomingEvent loading={loading} data={data?.events || []} />
       <SectionSeparator />
-      <PopularBlog />
+      <PopularBlog loading={loading} data={data?.blogs || []} />
       <Footer />
     </MainLayout>
   );

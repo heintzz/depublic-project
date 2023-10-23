@@ -9,8 +9,18 @@ import "swiper/css/pagination";
 import "./Carousel.css";
 
 import Concert from "assets/images/concert.png";
+import { BlogType } from "src/types/highlight.type";
 
-export default function PopularBlog() {
+interface PopularBlogProps {
+  loading: boolean;
+  data: BlogType[];
+}
+
+export default function PopularBlog(props: PopularBlogProps) {
+  if (props.loading) {
+    return <p className="px-7">....</p>;
+  }
+
   return (
     <div className="pt-6">
       <div className="flex justify-between items-center px-7">
