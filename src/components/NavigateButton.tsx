@@ -10,14 +10,14 @@ interface ButtonProps {
 
 export default function NavigateButton(props: ButtonProps) {
   const { path, mode, children } = props;
-  const color = props?.color || "#A103D3";
+  const color = props?.color || "primary-500";
 
   switch (mode) {
     case "btn-md-full":
       return (
         <Link
           to={path}
-          className={`px-7 py-[10px] rounded-xl text-white bg-[${color}] font-semibold`}
+          className={`px-7 py-[10px] rounded-xl text-white bg-${color} font-semibold`}
         >
           {children}
         </Link>
@@ -26,17 +26,14 @@ export default function NavigateButton(props: ButtonProps) {
       return (
         <Link
           to={path}
-          className={`px-7 py-[10px] rounded-xl text-[${color}] bg-white border-[${color}] border-2 font-semibold`}
+          className={`px-7 py-[10px] rounded-xl text-${color} bg-white border-${color} border-2 font-semibold`}
         >
           {children}
         </Link>
       );
     case "btn-sm-full":
       return (
-        <Link
-          to={path}
-          className={`px-4 py-[7px] rounded-xl text-white bg-[${color}] font-semibold`}
-        >
+        <Link to={path} className={`px-4 py-[7px] rounded-xl text-white bg-${color} font-semibold`}>
           {children}
         </Link>
       );
@@ -44,7 +41,7 @@ export default function NavigateButton(props: ButtonProps) {
       return (
         <Link
           to={path}
-          className={`px-4 py-[7px] rounded-xl text-[${color}] bg-white border-[${color}] border-2 font-semibold`}
+          className={`px-4 py-[7px] rounded-xl text-${color} bg-white border-${color} border-2 font-semibold`}
         >
           {children}
         </Link>
