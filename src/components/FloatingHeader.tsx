@@ -18,8 +18,8 @@ export default function FloatingHeader() {
         </Link>
         {isAuthPage ? null : isLogin ? (
           <div className="flex items-center gap-x-3">
-            <div className="grid place-items-center w-10 h-10 bg-[#6B028D] rounded-full"></div>
-            <div className="grid place-items-center w-10 h-10 bg-[#6B028D] rounded-full"></div>
+            <div className="grid place-items-center w-10 h-10 bg-primary-700 rounded-full"></div>
+            <div className="grid place-items-center w-10 h-10 bg-primary-700 rounded-full"></div>
           </div>
         ) : (
           <div className="flex items-center gap-x-2">

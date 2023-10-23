@@ -25,30 +25,30 @@ export default function TicketPage() {
         <div className="flex flex-col m-sm:flex-row gap-y-2 items-center gap-x-2 my-8">
           <SearchBar additionalClassname="w-full" />
           <div className="w-full m-sm:w-fit flex justify-center gap-x-2 items-center min-h-[40px] bg-[#FFF0CC] p-2 rounded-xl">
-            <SlLocationPin color="#D49600" strokeWidth="1.5" />
+            <SlLocationPin color="text-secondary-700" strokeWidth="1.5" />
             <span className="font-medium text-sm">Location</span>
-            <BsChevronDown color="#D49600" strokeWidth="0.5" />
+            <BsChevronDown color="text-secondary-700" strokeWidth="0.5" />
           </div>
         </div>
         <div className="flex flex-col gap-y-2 m-sm:flex-row m-sm:items-center m-sm:justify-between">
           <h2 className="font-bold text-md">All Event</h2>
           <div className="flex gap-x-2">
             <div className="flex items-center justify-center gap-x-[6px] p-2 border-2 border-[#EEEEEE] rounded-[40px] min-w-[80px]">
-              <FiSliders color="#6B028D" />
+              <FiSliders color="text-primary-700" />
               <span className="font-semibold text-sm">Filter</span>
             </div>
             <div className="flex items-center justify-center gap-x-[6px] p-2 border-2 border-[#EEEEEE] rounded-[40px] min-w-[80px]">
-              <AiOutlineCalendar color="#6B028D" />
+              <AiOutlineCalendar color="text-primary-700" />
               <span className="font-semibold text-sm">Date</span>
             </div>
             <div className="flex items-center justify-center gap-x-[6px] p-2 border-2 border-[#EEEEEE] rounded-[40px] min-w-[80px]">
-              <PiTag color="#6B028D" />
+              <PiTag color="text-primary-700" />
               <span className="font-semibold text-sm">Price</span>
             </div>
           </div>
         </div>
         <hr className="mt-5" />
-        <p className="text-xs my-6 text-[#4D4D4D]">60 Event on result</p>
+        <p className="text-xs my-6 text-neutral-500">60 Event on result</p>
         <div className="grid gap-x-2 gap-y-6 grid-cols-1 m-sm:grid-cols-2 mb-20">
           {Array.from({ length: 10 }).map((_, index) => {
             return (
@@ -66,7 +66,7 @@ export default function TicketPage() {
                       <SlLocationPin size="1.25em" /> BOGOR
                     </div>
                     |{" "}
-                    <span className="text-[#A103D3]">
+                    <span className="text-primary-500">
                       {ISOToDateString("2023-10-21T10:13:08.115Z")}
                     </span>
                   </div>
@@ -75,10 +75,10 @@ export default function TicketPage() {
                     <p className="text-xs line-clamp-1">Lorem ipsum dolor sit amet consectet</p>
                   </div>
                   <div className="flex flex-wrap items-end my-4">
-                    <span className="font-bold text-[#A103D3] text-base">IDR 1.999.000</span>
+                    <span className="font-bold text-primary-500 text-base">IDR 1.999.000</span>
                     <span>/ 1 Person</span>
                   </div>
-                  <span className="p-[6px] text-[#0B640D] bg-[#EAF2E2] rounded-xl text-center font-semibold">
+                  <span className="p-[6px] text-success-900 bg-success-50 rounded-xl text-center font-semibold">
                     Tersedia
                   </span>
                 </div>

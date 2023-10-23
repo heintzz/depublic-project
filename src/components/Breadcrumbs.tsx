@@ -19,11 +19,13 @@ export default function Breadcrumbs(props: BreadcrumbProps) {
           return (
             <li key={index}>
               <div className="flex items-center">
-                <FiChevronRight size="1.75em" color="#A6A6A6" />
+                <FiChevronRight size="1.75em" color="text-neutral-300" />
                 <a
                   href={`/${element}`}
                   className={`ml-1 ${
-                    element === elements[elements.length - 1] ? "font-semibold text-[#A103D3]" : ""
+                    element === elements[elements.length - 1]
+                      ? "font-semibold text-primary-500"
+                      : ""
                   }`}
                 >
                   {breadcrumbsTicket[index]}

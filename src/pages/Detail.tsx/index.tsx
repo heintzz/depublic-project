@@ -33,8 +33,8 @@ export default function DetailPage() {
                 key={index}
                 className={`${
                   activeTab === item
-                    ? "border-b-[#6B028D] text-[#6B028D] font-bold"
-                    : "border-b-transparent text-[#A6A6A6]"
+                    ? "border-b-primary-700 text-primary-700 font-bold"
+                    : "border-b-transparent text-neutral-500"
                 } border-b-2 pb-3 cursor-pointer transition-all duration-200 ease-in`}
                 onClick={() => setActiveTab(item)}
               >
@@ -51,7 +51,7 @@ export default function DetailPage() {
             <SlLocationPin /> BANDUNG
           </div>
           <span>| </span>
-          <span className="text-[#A103D3]">{ISOToDateString("2023-10-21T10:13:08.115Z")}</span>
+          <span className="text-primary-500">{ISOToDateString("2023-10-21T10:13:08.115Z")}</span>
         </div>
         <h2 className="text-xl font-bold">Konser Silaturahmi Maher Zain</h2>
         <div className="relative mt-2">
@@ -76,7 +76,7 @@ export default function DetailPage() {
               </div>
             </div>
           )}
-          <div className="flex flex-col-reverse gap-y-3 m-sm:flex-row m-sm:gap-x-5 items-start text-[#4D4D4D]">
+          <div className="flex flex-col-reverse gap-y-3 m-sm:flex-row m-sm:gap-x-5 items-start text-neutral-500">
             <div className="text-justify">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, repudiandae! Quam,
               dolorem mollitia, quae illo dolores porro quasi doloremque quibusdam vero cupiditate
@@ -84,7 +84,7 @@ export default function DetailPage() {
             </div>
             <div className="flex flex-col justify-end gap-y-1 m-sm:min-w-[140px]">
               <span>Starting From</span>
-              <span className="text-[#A103D3] font-bold text-lg">IDR 1.999.000</span>
+              <span className="text-primary-500 font-bold text-lg">IDR 1.999.000</span>
             </div>
           </div>
           <h3 className="text-lg font-bold mt-8 mb-4">Highlight</h3>

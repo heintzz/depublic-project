@@ -98,13 +98,13 @@ export default function Signup() {
           </div>
           <button
             type="submit"
-            className="w-full p-4 my-10 rounded-xl bg-[#A103D3] text-white font-semibold"
+            className="w-full p-4 my-10 rounded-xl bg-primary-500 text-white font-semibold"
           >
             Create Account
           </button>
           <p className="text-center text-sm text-gray-400">
             Have an Account?{" "}
-            <Link to="/login" className="text-[#A103D3] font-bold">
+            <Link to="/login" className="text-primary-500 font-bold">
               Login
             </Link>
           </p>

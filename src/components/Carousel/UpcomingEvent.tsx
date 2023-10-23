@@ -57,7 +57,7 @@ export default function UpcomingEvent() {
                       <SlLocationPin size="1.25em" /> BANDUNG
                     </div>
                     |{" "}
-                    <span className="text-[#A103D3]">
+                    <span className="text-primary-500">
                       {ISOToDateString("2023-10-21T10:13:08.115Z")}
                     </span>
                   </div>
@@ -66,10 +66,10 @@ export default function UpcomingEvent() {
                     <p className="text-sm">Lorem ipsum dolor sit amet consectet</p>
                   </div>
                   <div className="flex flex-wrap items-end my-4 text-lg">
-                    <span className="font-bold text-[#A103D3]">IDR 1.999.000</span>
+                    <span className="font-bold text-primary-500">IDR 1.999.000</span>
                     <span>/ 1 Person</span>
                   </div>
-                  <span className="p-[6px] text-[#0B640D] bg-[#EAF2E2] rounded-xl text-center font-semibold">
+                  <span className="p-[6px] text-success-900 bg-success-50 rounded-xl text-center font-semibold">
                     Tersedia
                   </span>
                 </div>

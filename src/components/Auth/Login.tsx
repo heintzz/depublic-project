@@ -89,13 +89,13 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className="w-full p-4 my-10 rounded-xl bg-[#A103D3] text-white font-semibold"
+            className="w-full p-4 my-10 rounded-xl bg-primary-500 text-white font-semibold"
           >
             Sign In
           </button>
           <p className="text-center text-sm text-gray-400">
             Don't have an Account?{" "}
-            <Link to="/signup" className="text-[#A103D3] font-bold">
+            <Link to="/signup" className="text-primary-500 font-bold">
               Register
             </Link>
           </p>
