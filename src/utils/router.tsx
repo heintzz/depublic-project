@@ -18,7 +18,7 @@ const router = createBrowserRouter(
       <Route path="/login" element={<LoginPage />} loader={() => tokenServices.redirectToHome()} />
       <Route path="/ticket" element={<TicketPage />} />
       <Route path="/ticket/:id" element={<DetailPage />} />
-      <Route path="*" element={<TicketPage />} />
+      <Route path="*" element={<>Not found</>} />
     </Route>
   )
 );

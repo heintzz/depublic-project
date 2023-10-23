@@ -31,7 +31,6 @@ const handleUserLogin = async (email: string, password: string): Promise<User> =
 };
 
 const handleGoogleOauth = async (): Promise<string | undefined> => {
-  console.log(auth);
   return signInWithPopup(auth, googleProvider)
     .then((result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);

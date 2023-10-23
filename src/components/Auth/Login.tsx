@@ -105,7 +105,7 @@ const Login = () => {
       <div className="flex flex-col items-center">
         <p className="mb-8">atau login dengan</p>
         <div className="grid grid-cols-3 gap-x-5">
-          <OAuthButton />
+          <OAuthButton type="login" />
         </div>
       </div>
     </div>

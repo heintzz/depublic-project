@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { authServices } from "services/auth.services";
 import { tokenServices } from "services/token.services";
 
-const OAuth = () => {
+const OAuth = (props: { type: string }) => {
   const navigate = useNavigate();
 
   const handleGoogleLogin = () => {
@@ -12,12 +12,16 @@ const OAuth = () => {
       try {
         const res = await authServices.handleGoogleOauth();
         if (res) {
+          if (props.type === "signup") {
+            navigate("/login");
+            return;
+          }
           tokenServices.setAccessToken(res);
           navigate("/");
         }
       } catch (error) {
-        console.error(error);
         alert(error);
+        console.error(error);
       }
     })();
   };

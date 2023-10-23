@@ -114,7 +114,7 @@ export default function Signup() {
       <div className="flex flex-col items-center">
         <p className="mb-8">atau daftar dengan</p>
         <div className="grid grid-cols-3 gap-x-5">
-          <OAuthButton />
+          <OAuthButton type="signup" />
         </div>
       </div>
     </div>
