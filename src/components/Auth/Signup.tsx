@@ -1,12 +1,14 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import TwoBubbleOrnament from "assets/ornaments/two-bubble.svg";
 import ShowHidePassword from "components/Auth/ShowHidePassword";
 import SectionSeparator from "components/SectionSeparator";
 import OAuthButton from "./OAuthButton";
 
-import Loader from "components/Loader";
+import Loader from "components/Modal/Loader";
+import ModalBox from "components/Modal/ModalBox";
+import Response from "components/Modal/Response";
 import { authServices } from "services/auth.services";
 import "./Auth.css";
 
@@ -23,8 +25,9 @@ interface formInput {
 }
 
 export default function Signup() {
-  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [showModalSuccess, setShowModalSuccess] = useState(false);
+  const [showModalFailed, setShowModalFailed] = useState(false);
   const [input, setInput] = useState<formInput>(defaultSignupForm);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -43,17 +46,40 @@ export default function Signup() {
       try {
         await authServices.handleUserSignup(input.email, input.password);
         setLoading(false);
-        navigate("/login");
+        setShowModalSuccess(true);
       } catch (error) {
         console.error(error);
         setLoading(false);
+        setShowModalFailed(true);
       }
     })();
   };
 
   return (
     <div className="pb-10">
-      {loading && <Loader />}
+      {loading && (
+        <ModalBox>
+          <Loader />
+        </ModalBox>
+      )}
+      {showModalSuccess && (
+        <ModalBox>
+          <Response
+            show={setShowModalSuccess}
+            message="Registration succeed"
+            instruction="please login 🚀"
+          />
+        </ModalBox>
+      )}
+      {showModalFailed && (
+        <ModalBox>
+          <Response
+            show={setShowModalFailed}
+            message="Registration failed"
+            instruction="please try again later 🙏"
+          />
+        </ModalBox>
+      )}
       <div className="w-full bg-[#FEF6E5] px-7 py-5 font-bold relative z-[1]">Sign Up</div>
       <div className="px-7 pt-7 relative">
         <img

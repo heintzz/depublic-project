@@ -22,3 +22,14 @@ export const ISOToDateString = (ISODate: string) => {
   const monthIndex = date.getMonth();
   return `${date.getDate()} ${numToMonth[monthIndex]} ${date.getFullYear()}`;
 };
+
+export const NumberToCurrencyFormat = (num: number) => {
+  const currecyFormat = num.toLocaleString("id-ID", {
+    style: "currency",
+    currency: "IDR",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
+
+  return currecyFormat;
+};

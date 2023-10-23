@@ -1,14 +1,17 @@
+import TwoBubbleOrnament from "assets/ornaments/two-bubble.svg";
+import ShowHidePassword from "components/Auth/ShowHidePassword";
+import Loader from "components/Modal/Loader";
+import SectionSeparator from "components/SectionSeparator";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authServices } from "services/auth.services";
 import { tokenServices } from "services/token.services";
-import TwoBubbleOrnament from "assets/ornaments/two-bubble.svg";
-import ShowHidePassword from "components/Auth/ShowHidePassword";
-import Loader from "components/Loader";
-import SectionSeparator from "components/SectionSeparator";
 import OAuthButton from "./OAuthButton";
 
+import Modal from "components/Modal/ModalBox";
+import Response from "components/Modal/Response";
 import "./Auth.css";
+import { FirebaseError } from "firebase/app";
 
 const defaultLoginForm = {
   email: "",
@@ -25,6 +28,8 @@ const Login = () => {
   const [input, setInput] = useState<formInput>(defaultLoginForm);
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [showModalFailed, setShowModalFailed] = useState(false);
+  const [errorMessages, setErrorMessages] = useState<string>();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInput((prev: formInput) => {
@@ -44,16 +49,32 @@ const Login = () => {
         tokenServices.setAccessToken(accessToken);
         setLoading(false);
         navigate("/");
-      } catch (error) {
-        console.error(error);
+      } catch (error: unknown) {
         setLoading(false);
+        setShowModalFailed(true);
+        if (error instanceof FirebaseError) {
+          setErrorMessages(error.message);
+        }
       }
     })();
   };
 
   return (
     <div className="pb-10">
-      {loading && <Loader />}
+      {loading && (
+        <Modal>
+          <Loader />
+        </Modal>
+      )}
+      {showModalFailed && (
+        <Modal>
+          <Response
+            show={setShowModalFailed}
+            message="Login failed"
+            instruction={errorMessages || "please try again later 🙏"}
+          />
+        </Modal>
+      )}
       <div className="w-full bg-[#FEF6E5] px-7 py-5 font-bold relative z-[1]">Sign In</div>
       <div className="px-7 pt-7 relative">
         <img
