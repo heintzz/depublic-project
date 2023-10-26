@@ -12,7 +12,7 @@ import Maher from "assets/images/maher-zain.png";
 import NavigateButton from "components/NavigateButton";
 import { tokenServices } from "services/token.services";
 
-export default function DetailPage() {
+export default function DetailEventPage() {
   const isLogin = tokenServices.getAccessToken();
   const [activeTab, setActiveTab] = useState("Summary");
   const path = useLocation();
@@ -23,7 +23,7 @@ export default function DetailPage() {
     <MainLayout>
       <div className="px-7 pt-8">
         <div className="mb-10">
-          <Breadcrumbs elements={paths} />
+          <Breadcrumbs elements={paths} type="event" />
           <img src={Maher} alt="maher cover" className="mt-7" />
         </div>
         <div className="flex gap-x-2 justify-between text-xs overflow-x-auto">

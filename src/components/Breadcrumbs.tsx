@@ -2,12 +2,15 @@ import { FiChevronRight } from "react-icons/fi";
 
 interface BreadcrumbProps {
   elements: string[];
+  type: "event" | "registration";
 }
 
 const breadcrumbsTicket = ["Ticket", "Detail Event"];
+const breadcrumbsRegistration = ["Registration", "Register Form"];
 
 export default function Breadcrumbs(props: BreadcrumbProps) {
   const { elements } = props;
+  const breadcrumbs = props.type === "event" ? breadcrumbsTicket : breadcrumbsRegistration;
 
   return (
     <nav className="flex text-xs" aria-label="Breadcrumb">
@@ -28,7 +31,7 @@ export default function Breadcrumbs(props: BreadcrumbProps) {
                       : ""
                   }`}
                 >
-                  {breadcrumbsTicket[index]}
+                  {breadcrumbs[index]}
                 </a>
               </div>
             </li>
