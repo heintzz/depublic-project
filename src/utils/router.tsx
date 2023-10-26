@@ -5,12 +5,12 @@ import { RegistrationPage } from "pages/Registration";
 import { RegistrationFormPage } from "pages/RegistrationForm";
 import { SignupPage } from "pages/Signup";
 import TicketPage from "pages/Ticket";
-import { Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { tokenServices } from "services/token.services";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route>
+export default function RouterConfig() {
+  return (
+    <Routes>
       <Route path="/" element={<HomePage />} />
       <Route
         path="/signup"
@@ -23,8 +23,6 @@ const router = createBrowserRouter(
       <Route path="/ticket/:id" element={<DetailEventPage />} />
       <Route path="/registration/:id" element={<RegistrationFormPage />} />
       <Route path="*" element={<>Not found</>} />
-    </Route>
-  )
-);
-
-export default router;
+    </Routes>
+  );
+}
