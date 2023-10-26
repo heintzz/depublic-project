@@ -6,7 +6,7 @@ import { BsChevronDown } from "react-icons/bs";
 import { FiSliders } from "react-icons/fi";
 import { PiTag } from "react-icons/pi";
 import { SlLocationPin } from "react-icons/sl";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import Maher from "assets/images/maher-zain.png";
 
@@ -48,41 +48,40 @@ export default function TicketPage() {
           </div>
         </div>
         <hr className="mt-5" />
-        <p className="text-xs my-6 text-neutral-500">60 Event on result</p>
+        <p className="text-xs my-6 text-neutral-500">60 events on result</p>
         <div className="grid gap-x-2 gap-y-6 grid-cols-1 m-sm:grid-cols-2 mb-20">
           {Array.from({ length: 10 }).map((_, index) => {
             return (
-              <div
-                key={index}
-                className="text-xs col-span-1 flex flex-col p-2 shadow-sm max-h-[330px] rounded-xl bg-white"
-              >
-                <img
-                  className="h-[150px] m-sm:h-[100px] m-md:h-[120px] w-full bg-cover rounded-xl object-fill"
-                  src={Maher}
-                />
-                <div className="flex flex-col mt-3">
-                  <div className="text-xs flex items-center gap-x-2">
-                    <div className="flex gap-x-1 items-center">
-                      <SlLocationPin size="1.25em" /> BOGOR
+              <Link key={index} to={`/ticket/${index}`}>
+                <div className="text-xs col-span-1 flex flex-col p-2 shadow-sm max-h-[330px] rounded-xl bg-white">
+                  <img
+                    className="h-[150px] m-sm:h-[100px] m-md:h-[120px] w-full bg-cover rounded-xl object-fill"
+                    src={Maher}
+                  />
+                  <div className="flex flex-col mt-3">
+                    <div className="text-xs flex items-center gap-x-2">
+                      <div className="flex gap-x-1 items-center">
+                        <SlLocationPin size="1.25em" /> BOGOR
+                      </div>
+                      |{" "}
+                      <span className="text-primary-500">
+                        {ISOToDateString("2023-10-21T10:13:08.115Z")}
+                      </span>
                     </div>
-                    |{" "}
-                    <span className="text-primary-500">
-                      {ISOToDateString("2023-10-21T10:13:08.115Z")}
+                    <div className="flex flex-col gap-y-1 mt-2">
+                      <h1 className="font-bold text-base line-clamp-1">Judul Event</h1>
+                      <p className="text-xs line-clamp-1">Lorem ipsum dolor sit amet consectet</p>
+                    </div>
+                    <div className="flex flex-wrap items-end my-4">
+                      <span className="font-bold text-primary-500 text-base">IDR 1.999.000</span>
+                      <span>/ 1 Person</span>
+                    </div>
+                    <span className="p-[6px] text-success-900 bg-success-50 rounded-xl text-center font-semibold">
+                      Tersedia
                     </span>
                   </div>
-                  <div className="flex flex-col gap-y-1 mt-2">
-                    <h1 className="font-bold text-base line-clamp-1">Judul Event</h1>
-                    <p className="text-xs line-clamp-1">Lorem ipsum dolor sit amet consectet</p>
-                  </div>
-                  <div className="flex flex-wrap items-end my-4">
-                    <span className="font-bold text-primary-500 text-base">IDR 1.999.000</span>
-                    <span>/ 1 Person</span>
-                  </div>
-                  <span className="p-[6px] text-success-900 bg-success-50 rounded-xl text-center font-semibold">
-                    Tersedia
-                  </span>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

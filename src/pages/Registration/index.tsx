@@ -3,6 +3,7 @@ import MainLayout from "components/MainLayout";
 import { useLocation } from "react-router-dom";
 import { RiImage2Fill } from "react-icons/ri";
 import NavigateButton from "components/NavigateButton";
+import Footer from "components/Footer";
 
 export const RegistrationPage = () => {
   const path = useLocation();
@@ -20,7 +21,7 @@ export const RegistrationPage = () => {
           <RiImage2Fill size="7em" fill="#A6A6A6" className="self-center my-12" />
         </div>
       </div>
-      <div className="flex flex-col gap-y-4 px-7 py-10">
+      <div className="flex flex-col gap-y-4 px-7 pt-10">
         {Array.from({ length: 3 }).map((_, index) => {
           return (
             <div key={index} className="pt-9 pb-7 px-4 bg-white rounded-[20px] shadow-sm">
@@ -40,6 +41,7 @@ export const RegistrationPage = () => {
           );
         })}
       </div>
+      <Footer />
     </MainLayout>
   );
 };
